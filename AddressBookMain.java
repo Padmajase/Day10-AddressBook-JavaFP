@@ -1,29 +1,33 @@
 import java.util.Scanner;
 import java.util.*;
 
-class AddressBookMain {
+class AddressBookMain
+{
 	public static void main(String args[])
 	{
 		System.out.println("Welcome To AddressBook !");
-		Contacts.createContact("Padmaja Eknarayan", "IT park chakan", "pune", "maharashtra", "430501", "9067679078", "opsdsnmn@gmail.com");
+		Contacts.addContact();
 	}
 }
 
-class Contacts {
-	/**creating contact using Arraylist **/
-
-	static void createContact(String name, String address, String city, String state, String zipCode, String phoneNo, String email)
+class Contacts
+{
+	static void addContact()
 	{
 		ArrayList<String> firstContact = new ArrayList<String>(7);
-				
-		firstContact.add(name);
-		firstContact.add(address);
-		firstContact.add(city);
-		firstContact.add(state);
-		firstContact.add(zipCode);
-		firstContact.add(phoneNo);
-		firstContact.add(email);
-			
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the contact details  : ");
+		System.out.println("name address city state zip phoneNo email  : ");
+		
+		/** adding contact using for loop and Arraylist  **/
+
+		for(int i =0; i<7; i++)
+		{
+			String s = sc.nextLine();
+			firstContact.add(s);
+		}
+		System.out.println("contact details added :");
 		System.out.println(firstContact );
 		
 	}
